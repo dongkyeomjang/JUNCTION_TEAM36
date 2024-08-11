@@ -56,6 +56,9 @@ public class Blinker {
     @Column(name = "type")
     Integer type;
 
+    @Column(name = "complexity")
+    Double complexity;
+
     @Builder
     public Blinker(
             Double longitude,
@@ -68,7 +71,8 @@ public class Blinker {
             Integer roadAddrNum,
             Integer status,
             Integer currentMode,
-            Integer type) {
+            Integer type,
+            Double complexity) {
 
         this.longitude = longitude;
         this.latitude = latitude;
@@ -82,6 +86,7 @@ public class Blinker {
         this.currentMode = currentMode;
         this.lastRedSignalTime = LocalDateTime.now();
         this.type = type;
+        this.complexity = complexity;
     }
 
     public void updateStatus(int newStatus) {
@@ -93,5 +98,9 @@ public class Blinker {
 
     public void updateCurrentMode(Integer currentMode) {
         this.currentMode = currentMode;
+    }
+
+    public void updateComplexity(Double complexity) {
+        this.complexity = complexity;
     }
 }

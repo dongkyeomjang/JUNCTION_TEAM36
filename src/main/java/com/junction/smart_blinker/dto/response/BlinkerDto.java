@@ -20,7 +20,8 @@ public record BlinkerDto(
         Integer status,
         Integer currentMode,
         Integer allocatedSecond,
-        Integer type
+        Integer type,
+        Double complexity
 ) {
     public static BlinkerDto fromEntity(Blinker blinker) {
         return BlinkerDto.builder()
@@ -37,6 +38,7 @@ public record BlinkerDto(
                 .currentMode(blinker.getCurrentMode())
                 .allocatedSecond(blinker.getAllocatedSecond())
                 .type(blinker.getType())
+                .complexity(blinker.getComplexity())
                 .build();
     }
 }

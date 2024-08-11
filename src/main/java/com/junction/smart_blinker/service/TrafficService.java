@@ -119,6 +119,8 @@ public class TrafficService {
     public void consumeTrafficInformation(TrafficDto trafficDto) {
         Blinker blinker = blinkerRepository.findById(trafficDto.blinkerId())
                 .orElseThrow(() -> new CommonException(ErrorCode.NOT_FOUND_RESOURCE));
+        blinker.updateComplexity(trafficDto.carDensity());
+        blinkerRepository.save(blinker);
         List<Blinker> allBlinkers = getAllBlinkers();
         List<Blinker> parallelBlinkers = blinkerRelationRepository.findParallelBlinkers(blinker.getId());
         List<Blinker> crossBlinkers = blinkerRelationRepository.findCrossBlinkers(blinker.getId());
