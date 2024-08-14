@@ -1,5 +1,6 @@
 # JUNCTION_TEAM36
-JUNCTION ASIA 2024 Team 36(Sipwon_Bbang)'s Back-End Repository 
+
+Team 36's back-end repository for JUNCTION ASIA 2024.
 
 ### 🥯 Team Name: Sipwon-Bbang
 
